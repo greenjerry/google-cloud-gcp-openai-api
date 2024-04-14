@@ -204,6 +204,8 @@ def generate_stream_response_start():
 def generate_stream_response(content: str):
     ts = int(time.time())
     id = f"cmpl-{secrets.token_hex(12)}"
+    if debug:
+        print("answer:",content)
     return {
         "id": id,
         "created": ts,
