@@ -344,14 +344,14 @@ async def chat_completions(body: ChatBody, request: Request):
     )
     answer = conversation.predict(input=question)
 
-    if debug:
-        print(f"stream = {body.stream}")
-        print(f"model = {body.model}")
-        print(f"temperature = {temperature}")
-        print(f"top_k = {top_k}")
-        print(f"top_p = {top_p}")
-        print(f"max_output_tokens = {max_output_tokens}")
-        print(f"history = {memory.buffer}")
+    # if debug:
+    #     print(f"stream = {body.stream}")
+    #     print(f"model = {body.model}")
+    #     print(f"temperature = {temperature}")
+    #     print(f"top_k = {top_k}")
+    #     print(f"top_p = {top_p}")
+    #     print(f"max_output_tokens = {max_output_tokens}")
+    #     print(f"history = {memory.buffer}")
 
     # Return output
     if body.stream:
