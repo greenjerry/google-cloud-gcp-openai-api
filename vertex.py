@@ -312,7 +312,9 @@ async def chat_completions(body: ChatBody, request: Request):
         temperature=temperature,
         top_k=top_k,
         top_p=top_p,
-        max_output_tokens=max_output_tokens
+        max_output_tokens=max_output_tokens,
+        project_id=project,
+        location=location,
     )
 
     # Buffer for storing conversation memory
