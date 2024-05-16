@@ -32,6 +32,7 @@ from sse_starlette.sse import EventSourceResponse
 # Google Vertex AI
 import google.auth
 from google.cloud import aiplatform
+import vertexai
 
 # LangChain
 import langchain
@@ -67,7 +68,7 @@ default_top_p = os.environ.get("TOP_P", "0.8")
 # API key
 default_api_key = f"sk-{secrets.token_hex(21)}"
 api_key = os.environ.get("OPENAI_API_KEY", default_api_key)
-print(f"API key: {api_key}")
+# print(f"API key: {api_key}")
 
 app = FastAPI(
     title='OpenAI API',
@@ -94,7 +95,7 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
-aiplatform.init(
+vertexai.init(
     project=project,
     location=location,
 )
